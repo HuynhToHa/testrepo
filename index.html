@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Animalz Marquee Exact Replica</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #0d0d0d;
+    }
+
+    /* Khung chứa tổng */
+    .marquee-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      overflow: hidden;
+      width: 100%;
+      padding: 60px 0;
+    }
+
+    /* Dải chứa danh sách logo */
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      user-select: none;
+    }
+
+    /* Khối danh sách logo */
+    .marquee-content {
+      display: flex;
+      align-items: center;
+      gap: 60px;          /* Khoảng cách giữa các logo */
+      padding-right: 60px;  /* Đảm bảo khoảng cách giữa phần tử cuối nhóm này và đầu nhóm sau */
+    }
+
+    .marquee-content img {
+      height: 35px;
+      filter: grayscale(100%);
+      opacity: 0.6;
+      transition: opacity 0.3s, filter 0.3s;
+    }
+
+    .marquee-content img:hover {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+
+    /* --- ANIMATION (KHÔNG CÓ HOVER PAUSE) --- */
+
+    /* Dòng 1: Phải sang Trái */
+    .track-left {
+      animation: scrollLeft 20s linear infinite;
+    }
+
+    /* Dòng 2: Trái sang Phải */
+    .track-right {
+      animation: scrollRight 20s linear infinite;
+    }
+
+    @keyframes scrollLeft {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%); /* Dịch chuyển đúng 50% tổng chiều dài dải */
+      }
+    }
+
+    @keyframes scrollRight {
+      0% {
+        transform: translateX(-50%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="marquee-wrapper">
+    <!-- DÒNG 1: CHẠY TỪ PHẢI SANG TRÁI -->
+    <div class="marquee-track track-left">
+      <!-- Nhân bản 4 nhóm logo giống hệt nhau để nối đuôi liên tục không khoảng trống -->
+      <div class="marquee-content">
+        <img src="https://via.placeholder.com/130x40?text=Logo+1" alt="Logo 1">
+        <img src="https://via.placeholder.com/130x40?text=Logo+2" alt="Logo 2">
+        <img src="https://via.placeholder.com/130x40?text=Logo+3" alt="Logo 3">
+        <img src="https://via.placeholder.com/130x40?text=Logo+4" alt="Logo 4">
+        <img src="https://via.placeholder.com/130x40?text=Logo+5" alt="Logo 5">
+      </div>
+      <div class="marquee-content">
+        <img src="https://via.placeholder.com/130x40?text=Logo+1" alt="Logo 1">
+        <img src="https://via.placeholder.com/130x40?text=Logo+2" alt="Logo 2">
+        <img src="https://via.placeholder.com/130x40?text=Logo+3" alt="Logo 3">
+        <img src="https://via.placeholder.com/130x40?text=Logo+4" alt="Logo 4">
+        <img src="https://via.placeholder.com/130x40?text=Logo+5" alt="Logo 5">
+      </div>
+      <div class="marquee-content">
+        <img src="https://via.placeholder.com/130x40?text=Logo+1" alt="Logo 1">
+        <img src="https://via.placeholder.com/130x40?text=Logo+2" alt="Logo 2">
+        <img src="https://via.placeholder.com/130x40?text=Logo+3" alt="Logo 3">
+        <img src="https://via.placeholder.com/130x40?text=Logo+4" alt="Logo 4">
+        <img src="https://via.placeholder.com/130x40?text=Logo+5" alt="Logo 5">
+      </div>
+      <div class="marquee-content">
+        <img src="https://via.placeholder.com/130x40?text=Logo+1" alt="Logo 1">
+        <img src="https://via.placeholder.com/130x40?text=Logo+2" alt="Logo 2">
+        <img src="https://via.placeholder.com/130x40?text=Logo+3" alt="Logo 3">
+        <img src="https://via.placeholder.com/130x40?text=Logo+4" alt="Logo 4">
+        <img src="https://via.placeholder.com/130x40?text=Logo+5" alt="Logo 5">
+      </div>
+    </div>
+
+    <!-- DÒNG 2: CHẠY TỪ TRÁI SANG PHẢI -->
+    <div class="marquee-track track-right">
+      <div class="marquee-content">
+        <img src="https://via.placeholder.com/130x40?text=Logo+A" alt="Logo A">
+        <img src="https://via.placeholder.com/130x40?text=Logo+B" alt="Logo B">
+        <img src="https://via.placeholder.com/130x40?text=Logo+C" alt="Logo C">
+        <img src="https://via.placeholder.com/130x40?text=Logo+D" alt="Logo D">
+        <img src="https://via.placeholder.com/130x40?text=Logo+E" alt="Logo E">
+      </div>
+      <div class="marquee-content">
+        <img src="https://via.placeholder.com/130x40?text=Logo+A" alt="Logo A">
+        <img src="https://via.placeholder.com/130x40?text=Logo+B" alt="Logo B">
+        <img src="https://via.placeholder.com/130x40?text=Logo+C" alt="Logo C">
+        <img src="https://via.placeholder.com/130x40?text=Logo+D" alt="Logo D">
+        <img src="https://via.placeholder.com/130x40?text=Logo+E" alt="Logo E">
+      </div>
+      <div class="marquee-content">
+        <img src="https://via.placeholder.com/130x40?text=Logo+A" alt="Logo A">
+        <img src="https://via.placeholder.com/130x40?text=Logo+B" alt="Logo B">
+        <img src="https://via.placeholder.com/130x40?text=Logo+C" alt="Logo C">
+        <img src="https://via.placeholder.com/130x40?text=Logo+D" alt="Logo D">
+        <img src="https://via.placeholder.com/130x40?text=Logo+E" alt="Logo E">
+      </div>
+      <div class="marquee-content">
+        <img src="https://via.placeholder.com/130x40?text=Logo+A" alt="Logo A">
+        <img src="https://via.placeholder.com/130x40?text=Logo+B" alt="Logo B">
+        <img src="https://via.placeholder.com/130x40?text=Logo+C" alt="Logo C">
+        <img src="https://via.placeholder.com/130x40?text=Logo+D" alt="Logo D">
+        <img src="https://via.placeholder.com/130x40?text=Logo+E" alt="Logo E">
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
